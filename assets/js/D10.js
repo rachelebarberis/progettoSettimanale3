@@ -72,7 +72,7 @@ function whoIsBigger(num1, num2) {
     return "i numeri sono uguali";
   }
 }
-console.log(whoIsBigger(2, 2));
+console.log(whoIsBigger(24, 2));
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
