@@ -186,6 +186,18 @@ console.log(isTodayMyBirthday());
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+const io = {
+  name: "Riccard",
+  surname: "Barberis",
+  age: "23",
+}
+
+function deleteProp (oggetto, str) {
+  delete oggetto[str];
+  return oggetto;
+}
+console.log(deleteProp(io, 'age'));
+
 const movies = [
   {
     Title: 'The Lord of the Rings: The Fellowship of the Ring',
@@ -358,10 +370,23 @@ console.log(searchByTitle(movies, 'Avengers'));
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+function searchAndDivide (array, search) {
+  const match= array.filter(movie=>movie.Title.includes(search));
+  const unmatch= array.filter(movie=>!movie.Title.includes(search));
+  return {
+    match,
+    unmatch,
+  }
+}
+console.log(searchAndDivide(movies,'Avengers'));
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
-
+function removeIndex (array, index) {
+  array.splice(index, 1);
+  return array;
+}
+console.log(removeIndex(movies,(0)));
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
